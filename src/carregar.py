@@ -41,3 +41,8 @@ df["qtd_palavras"] = df["instruction"].str.split().str.len()
 print(f"Média de palavras: {df['qtd_palavras'].mean():.1f}")
 print(f"Menor mensagem: {df['qtd_palavras'].min()} palavras")
 print(f"Maior mensagem: {df['qtd_palavras'].max()} palavras")
+
+print()
+print("=== 6. Tamanho médio por categoria ===")
+media_palavras = df.groupby("category")["qtd_palavras"].mean()
+print(media_palavras.sort_values(ascending=False).round(1))
