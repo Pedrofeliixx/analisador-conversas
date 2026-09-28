@@ -21,6 +21,7 @@ Análise de mensagens de clientes de atendimento para entender **sobre o que os 
 | Qual categoria tem mensagens mais longas? | **Reembolso** (50,7 caracteres em média). As mais curtas são **cancelamento** e **contato** (44,0) |
 | Quais intenções pedem mais texto? | **Prazo de entrega** (11,0 palavras) e **política de reembolso** (10,5) |
 | Há mensagens repetidas? | Sim: 24.635 mensagens únicas em 26.872, com frases que aparecem até 8 vezes |
+![Média de caracteres por mensagem, por categoria](imagens/media_por_categoria.png)
 
 **Leitura dos resultados:** a diferença entre categorias é pequena (cerca de 7 caracteres entre a maior e a menor média), e a maior mensagem de cada categoria fica entre 15 e 16 palavras. Em todos os assuntos o cliente escreve pouco, então um agente de atendimento precisa entender a intenção com pouquíssimo contexto.
 
@@ -37,7 +38,7 @@ Exemplo: as 5 intenções com mensagens mais longas ([`sql/consultas.sql`](sql/c
 - [x] Exploração inicial com Pandas (nulos, categorias, intenções, tamanho das mensagens)
 - [x] Tamanho médio das mensagens por categoria e por intenção
 - [x] Carga dos dados em banco SQLite e consultas SQL, validadas contra o Pandas
-- [ ] Visualizações
+- [x] Visualizações
 - [ ] Classificação de sentimento e urgência com LLM
 - [ ] Conclusões
 
@@ -50,6 +51,7 @@ Exemplo: as 5 intenções com mensagens mais longas ([`sql/consultas.sql`](sql/c
 | `src/banco.py` | Cria o banco SQLite com a tabela `conversas` |
 | `src/consultas.py` | Executa as consultas do arquivo `.sql` no banco |
 | `sql/consultas.sql` | Consultas SQL |
+| `src/grafico.py` | Gera o gráfico de média de caracteres por categoria |
 
 ## Tecnologias
 
