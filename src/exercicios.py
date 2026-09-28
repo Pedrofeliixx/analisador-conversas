@@ -13,6 +13,11 @@ print("=== Exercício 2: categorias com mensagens mais curtas ===")
 print(media_caracteres.sort_values(ascending=True).round(1))        
 
 print()
-print("=== Exercício 3: maior mensagem por categoria ===")
+print("=== Exercício 3: maior mensagem por categoria (em palavras) ===")
 maior_por_categoria = df.groupby("category")["qtd_palavras"].max()
 print(maior_por_categoria.sort_values(ascending=False))
+
+print()
+print("=== Exercício 4: intenções com mensagens mais longas ===")
+media_por_intencao = df.groupby("intent")["qtd_palavras"].mean()
+print(media_por_intencao.sort_values(ascending=False).round(1).head(5))
