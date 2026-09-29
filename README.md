@@ -2,7 +2,7 @@
 
 > 🔨 Projeto em construção: atualizado a cada etapa.
 
-Análise de mensagens de clientes de atendimento para entender **sobre o que os clientes falam e como escrevem**, com o objetivo final de usar um LLM para classificar sentimento e urgência das mensagens.
+Análise de mensagens de clientes de atendimento para entender **sobre o que os clientes falam e como escrevem**, com uso de um **LLM (Claude)** para classificar o sentimento e a urgência das mensagens.
 
 ## Dados
 
@@ -34,14 +34,32 @@ Os dados foram carregados em um banco **SQLite** e as análises refeitas com **S
 
 Exemplo: as 5 intenções com mensagens mais longas ([`sql/consultas.sql`](sql/consultas.sql)).
 
+## Classificação com LLM
+
+Uma amostra aleatória de **200 mensagens** foi classificada pelo modelo **Claude Haiku 4.5** (API da Anthropic) em duas dimensões:
+
+- **Sentimento:** positivo, neutro ou negativo
+- **Urgência:** baixa, média ou alta
+
+**Como funciona:**
+
+- Um *system prompt* define o papel do modelo (analista de atendimento) e as regras de classificação.
+- O modelo responde em **JSON padronizado**, convertido em colunas com Pandas.
+- Tratamento de erros (`try/except`) garante que uma falha isolada não interrompa o processo.
+- A amostra usa `random_state=42`, então o sorteio é reproduzível.
+- A chave da API fica em um arquivo `.env`, fora do repositório.
+- **Custo total:** menos de US$ 0,04 para as 200 mensagens.
+
+Resultado: [`resultados/classificacao_amostra.csv`](resultados/classificacao_amostra.csv). A análise dos resultados está em andamento.
+
 ## Etapas
 
 - [x] Exploração inicial com Pandas (nulos, categorias, intenções, tamanho das mensagens)
 - [x] Tamanho médio das mensagens por categoria e por intenção
 - [x] Carga dos dados em banco SQLite e consultas SQL, validadas contra o Pandas
 - [x] Visualizações
-- [ ] Classificação de sentimento e urgência com LLM
-- [ ] Conclusões
+- [x] Classificação de sentimento e urgência com LLM (API do Claude) em amostra de 200 mensagens
+- [ ] Análise dos resultados da classificação
 
 ## Estrutura do projeto
 
@@ -53,10 +71,13 @@ Exemplo: as 5 intenções com mensagens mais longas ([`sql/consultas.sql`](sql/c
 | `src/consultas.py` | Executa as consultas do arquivo `.sql` no banco |
 | `sql/consultas.sql` | Consultas SQL |
 | `src/grafico.py` | Gera o gráfico de média de caracteres por categoria |
+| `src/teste_api.py` | Primeiro teste de chamada à API do Claude |
+| `src/classificar.py` | Classifica sentimento e urgência com LLM e salva o resultado |
+| `resultados/classificacao_amostra.csv` | Amostra de 200 mensagens classificadas |
 
 ## Tecnologias
 
-Python · Pandas · SQL · SQLite · Git
+Python · Pandas · SQL · SQLite · Matplotlib · API do Claude (Anthropic) · Git
 
 ## Como rodar
 
@@ -72,10 +93,18 @@ pip install -r requirements.txt
 
 2. Baixe o CSV do dataset (link acima) e coloque na pasta `data/`.
 
-3. Rode as análises:
+3. Para a classificação com LLM, crie um arquivo `.env` na raiz do projeto com a sua chave da API da Anthropic (gerada em [platform.claude.com](https://platform.claude.com)):
+
+```
+ANTHROPIC_API_KEY=sua-chave
+```
+
+4. Rode as análises:
 
 ```
 python src/carregar.py
 python src/banco.py
 python src/consultas.py
+python src/grafico.py
+python src/classificar.py
 ```
