@@ -2,7 +2,7 @@
 
 > 🔨 Projeto em construção: atualizado a cada etapa.
 
-Análise de mensagens de clientes de atendimento para entender **sobre o que os clientes falam e como escrevem**, com uso de um **LLM (Claude)** para classificar o sentimento e a urgência das mensagens.
+Análise de mensagens de clientes de atendimento para entender **sobre o que os clientes falam e como escrevem**, com uso de um **LLM (Claude)** para classificar o sentimento e a urgência das mensagens e **comparação entre versões de prompt**.
 
 ## Dados
 
@@ -46,11 +46,49 @@ Uma amostra aleatória de **200 mensagens** foi classificada pelo modelo **Claud
 - Um *system prompt* define o papel do modelo (analista de atendimento) e as regras de classificação.
 - O modelo responde em **JSON padronizado**, convertido em colunas com Pandas.
 - Tratamento de erros (`try/except`) garante que uma falha isolada não interrompa o processo.
-- A amostra usa `random_state=42`, então o sorteio é reproduzível.
+- A amostra usa `random_state=42`, então as duas versões do prompt classificam **exatamente as mesmas mensagens**.
 - A chave da API fica em um arquivo `.env`, fora do repositório.
-- **Custo total:** menos de US$ 0,04 para as 200 mensagens.
+- **Custo:** frações de centavo de dólar por mensagem.
 
-Resultado: [`resultados/classificacao_amostra.csv`](resultados/classificacao_amostra.csv). A análise dos resultados está em andamento.
+## Engenharia de prompt: v1 x v2
+
+### O problema do prompt v1
+
+O primeiro prompt só listava as opções de resposta, sem explicar cada uma. A análise dos resultados mostrou dois problemas:
+
+- **"Média" virou a resposta padrão:** 79,5% das mensagens foram classificadas com urgência média. Em categorias como cancelamento e envio, 100%.
+- **Inconsistência:** a mesma mensagem recebeu classificações diferentes em execuções diferentes.
+
+### O que mudou no prompt v2
+
+- **Critérios explícitos** para cada nível. Exemplo: urgência alta = cliente impedido de fazer algo importante agora; baixa = dúvida ou consulta informativa.
+- **Contexto** do negócio (e-commerce).
+- Instrução direta para **não usar "média" como padrão**.
+- **Exemplos resolvidos** (*few-shot*) mostrando o formato e o raciocínio esperados.
+
+### Resultado
+
+| Urgência | v1 | v2 |
+| --- | --- | --- |
+| Alta | 11,5% | 16,5% |
+| Média | 79,5% | 30,5% |
+| Baixa | 9,0% | 53,0% |
+
+- A urgência mudou em **113 de 200** mensagens, e o sentimento em **23**.
+- **87 mensagens migraram de média para baixa:** consultas como "ver a taxa de cancelamento", "baixar a fatura" e "política de reembolso". Pelo critério definido, são dúvidas informativas, e o v2 as classifica corretamente.
+- O sentimento negativo caiu de **30,5% para 19,5%**, porque o critério passou a exigir reclamação, frustração ou problema relatado.
+
+### Limitações encontradas
+
+A revisão manual das 18 mensagens que subiram para urgência alta mostrou:
+
+- **6 casos corretos:** problemas concretos, como não conseguir editar um pedido ou erro ao cadastrar endereço.
+- **12 casos questionáveis:** simples pedidos para falar com um atendente. O critério de "alta" citava *"não consegue falar com alguém"*, e o modelo aplicou a regra ao pé da letra.
+- **Sensibilidade à forma da frase:** "I try to notify of a sign-up error" foi classificada como alta, e "I don't know how to inform of problems with a signup" como baixa, apesar de tratarem do mesmo assunto.
+
+**Aprendizado:** critérios claros mudam drasticamente o comportamento do modelo, mas **cada expressão do prompt é interpretada literalmente**. Por isso, toda mudança de prompt deve ser validada lendo uma amostra dos resultados, e não apenas olhando os números.
+
+Resultados: [`resultados/classificacao_amostra.csv`](resultados/classificacao_amostra.csv) (v1) e [`resultados/classificacao_amostra_v2.csv`](resultados/classificacao_amostra_v2.csv) (v2).
 
 ## Etapas
 
@@ -59,7 +97,10 @@ Resultado: [`resultados/classificacao_amostra.csv`](resultados/classificacao_amo
 - [x] Carga dos dados em banco SQLite e consultas SQL, validadas contra o Pandas
 - [x] Visualizações
 - [x] Classificação de sentimento e urgência com LLM (API do Claude) em amostra de 200 mensagens
-- [ ] Análise dos resultados da classificação
+- [x] Análise dos resultados e identificação de problemas no prompt v1
+- [x] Prompt v2 com critérios e exemplos, e comparação v1 x v2
+- [ ] Gráfico da comparação v1 x v2
+- [ ] Conclusões finais
 
 ## Estrutura do projeto
 
@@ -72,12 +113,16 @@ Resultado: [`resultados/classificacao_amostra.csv`](resultados/classificacao_amo
 | `sql/consultas.sql` | Consultas SQL |
 | `src/grafico.py` | Gera o gráfico de média de caracteres por categoria |
 | `src/teste_api.py` | Primeiro teste de chamada à API do Claude |
-| `src/classificar.py` | Classifica sentimento e urgência com LLM e salva o resultado |
-| `resultados/classificacao_amostra.csv` | Amostra de 200 mensagens classificadas |
+| `src/classificar.py` | Classificação com o prompt v1 |
+| `src/classificar_v2.py` | Classificação com o prompt v2 (critérios e exemplos) |
+| `src/analise_llm.py` | Análise dos resultados: contagens, porcentagens e tabelas cruzadas |
+| `src/comparar.py` | Comparação entre os resultados do v1 e do v2 |
+| `resultados/classificacao_amostra.csv` | 200 mensagens classificadas pelo v1 |
+| `resultados/classificacao_amostra_v2.csv` | As mesmas 200 mensagens classificadas pelo v2 |
 
 ## Tecnologias
 
-Python · Pandas · SQL · SQLite · Matplotlib · API do Claude (Anthropic) · Git
+Python · Pandas · SQL · SQLite · Matplotlib · API do Claude (Anthropic) · Engenharia de prompt · Git
 
 ## Como rodar
 
@@ -107,4 +152,7 @@ python src/banco.py
 python src/consultas.py
 python src/grafico.py
 python src/classificar.py
+python src/classificar_v2.py
+python src/analise_llm.py
+python src/comparar.py
 ```
