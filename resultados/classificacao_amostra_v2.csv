@@ -1,0 +1,201 @@
+instruction,category,intent,sentimento,urgencia
+I can't talk with  a human agent,CONTACT,contact_human_agent,negativo,alta
+I have got to locate hte bills from {{Person Name}},INVOICE,check_invoice,neutro,baixa
+"I cannot pay, help me to inform of a problem with payments",PAYMENT,payment_issue,negativo,alta
+I want help speaking to customer service,CONTACT,contact_customer_service,neutro,media
+I try to see th accepted payment options,PAYMENT,check_payment_methods,neutro,baixa
+where to sign up to the company nmewsletter,SUBSCRIPTION,newsletter_subscription,neutro,baixa
+I'd like to see the withdrwaal fee how can i do it,CANCEL,check_cancellation_fee,neutro,baixa
+I want to speak with someone,CONTACT,contact_human_agent,neutro,media
+can you help me getting bill #85632?,INVOICE,get_invoice,neutro,baixa
+I don't know how to take a quick look at invoice #12588,INVOICE,check_invoice,neutro,baixa
+I don't know how to delete my platinum account,ACCOUNT,delete_account,neutro,media
+help me check in what cases can I ask to be refunded,REFUND,check_refund_policy,neutro,baixa
+is it possible to locate my bill from {{Person Name}},INVOICE,check_invoice,neutro,baixa
+i want help to file a consumer claim against ur organization,FEEDBACK,complaint,negativo,alta
+uhave a free number to call customer support,CONTACT,contact_customer_service,neutro,baixa
+i do not know how i can see the early termination penalties,CANCEL,check_cancellation_fee,neutro,baixa
+could you help me to unsubscribe to the damn newsletter?,SUBSCRIPTION,newsletter_subscription,negativo,media
+I don't know how to inform of problems with a signup,ACCOUNT,registration_problems,neutro,baixa
+download bill from {{Person Name}},INVOICE,get_invoice,neutro,baixa
+want assistance receiving a refund of money,REFUND,get_refund,neutro,media
+I don't know how to change to the pro account,ACCOUNT,switch_account,neutro,baixa
+how can i see the status of my subscription to ur newsletter,SUBSCRIPTION,newsletter_subscription,neutro,baixa
+I don't know what I have to do to cancel my {{Account Type}} account,ACCOUNT,delete_account,neutro,media
+I want help cancelling my subscription to your newsletter,SUBSCRIPTION,newsletter_subscription,neutro,media
+I'm trying to see what hours i can call customer service,CONTACT,contact_customer_service,neutro,baixa
+need to check what hours i can call customer service,CONTACT,contact_customer_service,neutro,baixa
+I do not know how I can see the withdrawal fee,CANCEL,check_cancellation_fee,neutro,baixa
+i want help to see when will my item arrive,DELIVERY,delivery_period,neutro,baixa
+how do I submit another delivery address?,SHIPPING,set_up_shipping_address,neutro,baixa
+"I want to see the cancellation charges, how do I do it?",CANCEL,check_cancellation_fee,neutro,baixa
+I want help to chat with a live agent,CONTACT,contact_human_agent,neutro,media
+modifying info on platinum account,ACCOUNT,edit_account,neutro,media
+"I expect a refund of {{Refund Amount}} dollars, has it been processed?",REFUND,track_refund,neutro,media
+I don't know how I can download my bill #12588,INVOICE,get_invoice,neutro,baixa
+"I can no longer afford order {{Order Number}}, can I cancel it?",ORDER,cancel_order,neutro,media
+i want help talking with somebody,CONTACT,contact_human_agent,neutro,alta
+i cant edit order {{Order Number}},ORDER,change_order,negativo,alta
+I need assistanc canceling the newsletter subscription,SUBSCRIPTION,newsletter_subscription,neutro,baixa
+do uhave a toll-free customer assistance phone number,CONTACT,contact_customer_service,neutro,baixa
+is it possible to speak to someone ?,CONTACT,contact_human_agent,neutro,alta
+assistance checking your reimbursement policy,REFUND,check_refund_policy,neutro,baixa
+there is a problem setting up my delivery address,SHIPPING,set_up_shipping_address,negativo,alta
+I want help downloading invoice #85632,INVOICE,get_invoice,neutro,baixa
+"I want to see how soon can I expect the order, how to do it?",DELIVERY,delivery_period,neutro,baixa
+where do i inform of a trouble with payments,PAYMENT,payment_issue,neutro,alta
+can you hwlp me talking with a person?,CONTACT,contact_human_agent,neutro,alta
+I want to open a {{Account Category}} account,ACCOUNT,create_account,neutro,baixa
+I do not know how to download the bills from {{Person Name}},INVOICE,get_invoice,neutro,baixa
+editing data on {{Account Category}} acocunt,ACCOUNT,edit_account,neutro,media
+talk to agent,CONTACT,contact_human_agent,neutro,alta
+need help leaving an opinion for a product,FEEDBACK,review,neutro,baixa
+want help to see the withdrawal charges,CANCEL,check_cancellation_fee,neutro,baixa
+help me seeing in what cases can I request reimbursements,REFUND,check_refund_policy,neutro,baixa
+where could i check order {{Order Number}} fucking curent status,ORDER,track_order,negativo,media
+want assistance seeing the ETA of purchase {{Order Number}},ORDER,track_order,neutro,baixa
+I don't know what I have to do to close my {{Account Category}} account,ACCOUNT,delete_account,neutro,media
+I'm trying to inform of a error with signup,ACCOUNT,registration_problems,negativo,alta
+want help to speak with an person,CONTACT,contact_human_agent,neutro,alta
+"I need to see the cancellation fee, can you help me?",CANCEL,check_cancellation_fee,neutro,baixa
+have a problem with the removal of my {{Account Type}} account,ACCOUNT,delete_account,negativo,alta
+I awnt assistance to locate the bill #00108,INVOICE,check_invoice,neutro,media
+"I have to create a platinum account, help me",ACCOUNT,create_account,neutro,baixa
+how to download my bills from {{Person Name}}?,INVOICE,get_invoice,neutro,baixa
+issue submitting a secondary shipping address,SHIPPING,set_up_shipping_address,negativo,media
+i have errors trying to modify the address,SHIPPING,change_shipping_address,negativo,alta
+I don't know what I have to do to download my invoice #12588,INVOICE,get_invoice,neutro,baixa
+I don't know what I need to do to remove a standard account,ACCOUNT,delete_account,neutro,baixa
+modifu details on {{Account Category}} account,ACCOUNT,edit_account,neutro,media
+"I don't use the goddamn gold account, I want to delete it",ACCOUNT,delete_account,negativo,media
+what do i need to do to talk to someone,CONTACT,contact_human_agent,neutro,alta
+i dont know how to inform of a trouble with payment,PAYMENT,payment_issue,neutro,media
+tell me what hours i can get in touch wit customer service,CONTACT,contact_customer_service,neutro,baixa
+help seeing what shipping options you offer,DELIVERY,delivery_options,neutro,baixa
+could you help me to file a damn consumer complaint?,FEEDBACK,complaint,negativo,alta
+I need to check in which situations can I ask for a refund,REFUND,check_refund_policy,neutro,baixa
+wanna check uf refund policy,REFUND,check_refund_policy,neutro,baixa
+I want help to get refunds,REFUND,get_refund,neutro,media
+"you are not helpful, help talking to an operator",CONTACT,contact_human_agent,negativo,alta
+I want to see what payment options are availabl,PAYMENT,check_payment_methods,neutro,baixa
+I need information about a delivery address update,SHIPPING,change_shipping_address,neutro,baixa
+create {{Account Type}} accountfor wife,ACCOUNT,create_account,neutro,media
+is it possible to place an order from {{Delivery City}},DELIVERY,delivery_options,neutro,baixa
+i have paid {{Currency Symbol}}{{Refund Amount}} for an order I'm trying to obtain a refund,REFUND,get_refund,negativo,alta
+I expect a restitution of {{Refund Amount}} dollars,REFUND,track_refund,negativo,media
+help to receive your newslettyer,SUBSCRIPTION,newsletter_subscription,neutro,baixa
+i dont know how  to see bill #12588,INVOICE,check_invoice,neutro,baixa
+is it possible to list the available payment modalities ?,PAYMENT,check_payment_methods,neutro,baixa
+how can I talk with a human agent?,CONTACT,contact_human_agent,neutro,media
+i dont kno how to inform of an error with a registration,ACCOUNT,registration_problems,neutro,media
+can uhelp me to chat with somebody,CONTACT,contact_human_agent,neutro,alta
+create new {{Account Type}} account for daughter,ACCOUNT,create_account,neutro,media
+want assistanfe to shop several damn articles,ORDER,place_order,negativo,media
+I need help making a complaint,FEEDBACK,complaint,negativo,media
+assistance checking what hours i can reach customre service,CONTACT,contact_customer_service,neutro,baixa
+I am waiting for a rebate fo {{Refund Amount}} dollars,REFUND,track_refund,neutro,media
+i dont know how i can talk to customer service,CONTACT,contact_customer_service,negativo,alta
+help me to create a {{Account Category}} account,ACCOUNT,create_account,neutro,baixa
+I try to notify of a sign-up error,ACCOUNT,registration_problems,negativo,alta
+i have problems with canceling order {{Order Number}},ORDER,cancel_order,negativo,media
+I try to order some of your article,ORDER,place_order,neutro,baixa
+I need hdlp to submit my feedback for a product,FEEDBACK,review,neutro,baixa
+tell me more about updating the delivery address,SHIPPING,change_shipping_address,neutro,baixa
+how could I edit my damn user?,ACCOUNT,edit_account,negativo,media
+need assistance to find my fucking bill from {{Person Name}},INVOICE,check_invoice,negativo,media
+i expect a reimbursement of {{Refund Amount}} dollars,REFUND,track_refund,neutro,media
+can ya help me to switch an item oforder {{Order Number}},ORDER,change_order,neutro,media
+what do I have to do to restore the key of my user profile?,ACCOUNT,recover_password,neutro,media
+I do not know what to do to cancel the standard account,ACCOUNT,delete_account,neutro,media
+I want information about the removal of my {{Account Type}} account,ACCOUNT,delete_account,neutro,baixa
+i dont know what i have to do to create a freemium account,ACCOUNT,create_account,neutro,baixa
+helpchecking the allowed payment options,PAYMENT,check_payment_methods,neutro,baixa
+I cannot submit a secondary delivery address,SHIPPING,set_up_shipping_address,negativo,alta
+"I have to edit some of my user details, how to do it?",ACCOUNT,edit_account,neutro,baixa
+set up new shipping address,SHIPPING,set_up_shipping_address,neutro,media
+want assistance to get the bills from {{Person Name}},INVOICE,get_invoice,neutro,baixa
+see under what circumstances can i ask for reimbursements,REFUND,check_refund_policy,neutro,baixa
+I want assistance requesting a compensation of money,REFUND,get_refund,neutro,media
+I have got to submit some feedback for a service,FEEDBACK,review,neutro,baixa
+I do not know how I could enter my new delivery address,SHIPPING,set_up_shipping_address,neutro,media
+i do not know what to do to talk with an operator,CONTACT,contact_human_agent,negativo,alta
+there are issues setting up the new shipping address,SHIPPING,set_up_shipping_address,negativo,media
+how do I create a {{Account Type}} account for my daughter?,ACCOUNT,create_account,neutro,baixa
+d uship to {{Delivery City}},DELIVERY,delivery_options,neutro,baixa
+get bill #12588,INVOICE,get_invoice,neutro,baixa
+need assistance cancelling purchase {{Order Number}},ORDER,cancel_order,neutro,media
+changing order {{Order Number}},ORDER,change_order,neutro,media
+can you help me subscribing to your corporate newsletter?,SUBSCRIPTION,newsletter_subscription,neutro,baixa
+i do not know what i neerd to do to download my bill #12588,INVOICE,get_invoice,neutro,baixa
+correcting infornation on standard account,ACCOUNT,edit_account,neutro,media
+need support tryinmg to change the address,SHIPPING,change_shipping_address,neutro,media
+wanna ask for a compensatin of money,REFUND,get_refund,negativo,media
+i need information about correcting my shipping address,SHIPPING,change_shipping_address,neutro,media
+how can I sign up to your corporate nnewsletter?,SUBSCRIPTION,newsletter_subscription,neutro,baixa
+need assistance to submit my feedback for your services,FEEDBACK,review,neutro,baixa
+where to report issues with online payments,PAYMENT,payment_issue,neutro,baixa
+i dont know how to check what methods for delivery are there,DELIVERY,delivery_options,neutro,baixa
+where could I inform of issues with payment?,PAYMENT,payment_issue,neutro,baixa
+I do not know what I have to do to chat with a human agent,CONTACT,contact_human_agent,neutro,alta
+assistance to see ru accepted payment options,PAYMENT,check_payment_methods,neutro,baixa
+I have got to see what methods for delivery I have,DELIVERY,delivery_options,neutro,baixa
+i do not know how to download the bill #37777,INVOICE,get_invoice,neutro,baixa
+I don't know how to speak with a humnan agent,CONTACT,contact_human_agent,negativo,alta
+I'm tryng to get the bill #00108,INVOICE,get_invoice,neutro,baixa
+what do i have to do to find my bills from {{Person Name}},INVOICE,check_invoice,neutro,baixa
+want assistance to write an opinion,FEEDBACK,review,neutro,baixa
+I am trying to list your acceoted payment options,PAYMENT,check_payment_methods,neutro,baixa
+checkmy invoice #37777,INVOICE,check_invoice,neutro,baixa
+question about opening standard accounts,ACCOUNT,create_account,neutro,baixa
+open {{Account Category}} account,ACCOUNT,create_account,neutro,baixa
+I do not know what to do to speak with an live agent,CONTACT,contact_human_agent,negativo,alta
+could uhelp me to contact an assistant,CONTACT,contact_human_agent,neutro,alta
+check allowed payment methods,PAYMENT,check_payment_methods,neutro,baixa
+question about cancellung purchase {{Order Number}},ORDER,cancel_order,neutro,media
+modify information on {{Account Type}} acfount,ACCOUNT,edit_account,neutro,media
+i dont know how to see the shipping options,DELIVERY,delivery_options,neutro,baixa
+I want to look for my bill #12588,INVOICE,check_invoice,neutro,baixa
+I'd like to see order {{Order Number}} current status will  uhelp me,ORDER,track_order,neutro,baixa
+i need assstance to check how soon can i expect the order,DELIVERY,delivery_period,neutro,baixa
+is it possible to notify of troubles with online payment ?,PAYMENT,payment_issue,neutro,baixa
+I don't know how I can cancel purchase {{Order Number}},ORDER,cancel_order,neutro,media
+I have problems with cancelling purchase {{Order Number}},ORDER,cancel_order,negativo,media
+I want assistance to check the withdcrawal charge,CANCEL,check_cancellation_fee,neutro,baixa
+"I have got to open a new bloody {{Account Type}} account, I need help",ACCOUNT,create_account,negativo,alta
+can you help me reporting a registration issue?,ACCOUNT,registration_problems,neutro,media
+I don't know what to do to chat with somebody,CONTACT,contact_human_agent,negativo,alta
+i want assistance to notify of errors with payment,PAYMENT,payment_issue,negativo,alta
+support updating my address,SHIPPING,change_shipping_address,neutro,media
+help mke chatting with a person,CONTACT,contact_human_agent,neutro,alta
+i call to check when my parcel is gonna arive,DELIVERY,delivery_period,neutro,baixa
+how do i change to the gold acconut,ACCOUNT,switch_account,neutro,baixa
+"I can't pay, assistance notifying of an issue with payment",PAYMENT,payment_issue,negativo,alta
+how do I add some items to order {{Order Number}} ?,ORDER,change_order,neutro,baixa
+editing data on pro account,ACCOUNT,edit_account,neutro,baixa
+shipping to {{Delivery Country}},DELIVERY,delivery_options,neutro,baixa
+i want help to ask for compensatiuons,REFUND,get_refund,negativo,media
+i try to check the shipment options,DELIVERY,delivery_options,neutro,baixa
+I'm waiting for a refund of {{Refund Amount}} dollrs,REFUND,track_refund,negativo,media
+open a {{Account Category}} account,ACCOUNT,create_account,neutro,baixa
+help to check what hours I can call customer service,CONTACT,contact_customer_service,neutro,baixa
+I try to lodge a customer complaint,FEEDBACK,complaint,negativo,media
+can you show me the compensation status?,REFUND,track_refund,neutro,baixa
+help to locate the bill from {{Person Name}},INVOICE,check_invoice,neutro,baixa
+need help editing m address,SHIPPING,change_shipping_address,neutro,media
+"I have got to track the restitution, how can I do it?",REFUND,track_refund,neutro,baixa
+need to make a consumer reclamation against ur organization,FEEDBACK,complaint,negativo,media
+see what hours i can reach customer service,CONTACT,contact_customer_service,neutro,baixa
+changing purchase {{Order Number}},ORDER,change_order,neutro,media
+i want help talking with an agent,CONTACT,contact_human_agent,neutro,media
+help me to delete an item from order {{Order Number}},ORDER,change_order,neutro,media
+I don't know how to change the personal information,ACCOUNT,edit_account,neutro,baixa
+need to receive ur newsletter can ya help me,SUBSCRIPTION,newsletter_subscription,neutro,baixa
+need assistance to make a consumer claim against ur business,FEEDBACK,complaint,negativo,alta
+want assistance to see the payment modalities,PAYMENT,check_payment_methods,neutro,baixa
+need help to shop several of ur item,ORDER,place_order,neutro,baixa
+can you show me what shipment options are available?,DELIVERY,delivery_options,neutro,baixa
+where can i lodge a customer claim,FEEDBACK,complaint,neutro,media
+I need assistance to dfownload my invoice #37777,INVOICE,get_invoice,neutro,media
+get invoice #85632,INVOICE,get_invoice,neutro,baixa
+how do I update the shipping address?,SHIPPING,change_shipping_address,neutro,baixa
+can you help me to check the methods for shipping?,DELIVERY,delivery_options,neutro,baixa
