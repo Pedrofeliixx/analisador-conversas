@@ -92,6 +92,15 @@ A revisão manual das 18 mensagens que subiram para urgência alta mostrou:
 
 Resultados: [`resultados/classificacao_amostra.csv`](resultados/classificacao_amostra.csv) (v1) e [`resultados/classificacao_amostra_v2.csv`](resultados/classificacao_amostra_v2.csv) (v2).
 
+## Conclusões
+
+- **O prompt pesa tanto quanto o modelo:** com o mesmo modelo e as mesmas 200 mensagens, a urgência "média" caiu de 79,5% para 30,5% só com a mudança do prompt.
+- **Critérios explícitos corrigem o viés, mas são lidos ao pé da letra:** a expressão "não consegue falar com alguém" levou 12 simples pedidos de atendente para urgência alta.
+- **Números não bastam:** a melhora só foi confirmada lendo uma amostra dos resultados. Toda mudança de prompt precisa de validação humana.
+- **Clientes escrevem pouco** (8,7 palavras em média), então a classificação depende de pistas mínimas, e pequenas variações de frase mudam o resultado.
+
+**Próximos passos:** um prompt v3 tratando pedidos de atendente humano, medir a consistência rodando a mesma versão duas vezes e montar um conjunto de mensagens rotuladas manualmente para medir a taxa de acerto.
+
 ## Etapas
 
 - [x] Exploração inicial com Pandas (nulos, categorias, intenções, tamanho das mensagens)
@@ -102,7 +111,7 @@ Resultados: [`resultados/classificacao_amostra.csv`](resultados/classificacao_am
 - [x] Análise dos resultados e identificação de problemas no prompt v1
 - [x] Prompt v2 com critérios e exemplos, e comparação v1 x v2
 - [x] Gráfico da comparação v1 x v2
-- [ ] Conclusões finais
+- [x] Conclusões finais
 
 ## Estrutura do projeto
 
