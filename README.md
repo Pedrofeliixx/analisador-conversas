@@ -52,6 +52,8 @@ Uma amostra aleatória de **200 mensagens** foi classificada pelo modelo **Claud
 
 ## Engenharia de prompt: v1 x v2
 
+![Urgência classificada pelo LLM: prompt v1 x v2](imagens/comparacao_prompts.png)
+
 ### O problema do prompt v1
 
 O primeiro prompt só listava as opções de resposta, sem explicar cada uma. A análise dos resultados mostrou dois problemas:
@@ -99,7 +101,7 @@ Resultados: [`resultados/classificacao_amostra.csv`](resultados/classificacao_am
 - [x] Classificação de sentimento e urgência com LLM (API do Claude) em amostra de 200 mensagens
 - [x] Análise dos resultados e identificação de problemas no prompt v1
 - [x] Prompt v2 com critérios e exemplos, e comparação v1 x v2
-- [ ] Gráfico da comparação v1 x v2
+- [x] Gráfico da comparação v1 x v2
 - [ ] Conclusões finais
 
 ## Estrutura do projeto
@@ -119,6 +121,7 @@ Resultados: [`resultados/classificacao_amostra.csv`](resultados/classificacao_am
 | `src/comparar.py` | Comparação entre os resultados do v1 e do v2 |
 | `resultados/classificacao_amostra.csv` | 200 mensagens classificadas pelo v1 |
 | `resultados/classificacao_amostra_v2.csv` | As mesmas 200 mensagens classificadas pelo v2 |
+| `src/grafico_prompts.py` | Gera o gráfico de comparação v1 x v2 |
 
 ## Tecnologias
 
